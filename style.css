@@ -384,7 +384,9 @@ section .title::after{
 .skills-content .right .react::before{
     width: 50%;
 }
-
+.skills-content .right .github::before{
+    width: 50%;
+}
 /* teams section styling */
 .teams .title::after{
     content: "who with me";
