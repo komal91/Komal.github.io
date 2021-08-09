@@ -35,11 +35,11 @@ section{
     padding: 0 80px;
     margin: auto;
 }
-.about, .services, .skills, .teams, .contact, footer{
+.about, .projects, .skills, .gallery, .contact, footer{
     font-family: 'Poppins', sans-serif;
 }
 .about .about-content,
-.services .serv-content,
+.projects .serv-content,
 .skills .skills-content,
 .contact .contact-content{
     display: flex;
@@ -261,21 +261,21 @@ section .title::after{
     background: none;
 }
 
-/* services section styling */
-.services, .teams{
+/* projects section styling */
+.projects, .gallery{
     color:#fff;
     background: #111;
 }
-.services .title::before,
-.teams .title::before{
+.projects .title::before,
+.gallery .title::before{
     background: #fff;
 }
-.services .title::after,
-.teams .title::after{
+.projects .title::after,
+.gallery .title::after{
     background: #111;
-    content: "what i provide";
+    content: "my work";
 }
-.services .serv-content .card{
+.projects .serv-content .card{
     width: calc(33% - 20px);
     background: #222;
     text-align: center;
@@ -284,112 +284,121 @@ section .title::after{
     cursor: pointer;
     transition: all 0.3s ease;
 }
-.services .serv-content .card:hover{
+.projects .serv-content .card:hover{
     background: #0066b2;
 }
-.services .serv-content .card .box{
+.projects .serv-content .card .box{
     transition: all 0.3s ease;
 }
-.services .serv-content .card:hover .box{
+.projects .serv-content .card:hover .box{
     transform: scale(1.05);
 }
-.services .serv-content .card i{
+.projects .serv-content .card img{
     font-size: 50px;
     color: #0066b2;
+    width: 100%;
     transition: color 0.3s ease;
 }
-.services .serv-content .card:hover i{
+.projects .serv-content .card:hover img{
     color: #fff;
 }
-.services .serv-content .card .text{
+.projects .serv-content .card .text{
     font-size: 25px;
     font-weight: 500;
     margin: 10px 0 7px 0;
 }
+.projects .serv-content .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: skyblue;
+}
 
+.box:hover .overlay {
+  opacity: 1;
+}
+
+.textLay {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
 /* skills section styling */
 
 .skills .title::after{
     content: "what i know";
 }
-.skills .skills-content .column{
-    width: calc(50% - 30px);
-}
-.skills .skills-content .left .text{
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-.skills .skills-content .left p{
-    text-align: justify;
-}
-.skills .skills-content .left a{
-    display: inline-block;
-    background: #0066b2;
-    color: #fff;
-    font-size: 18px;
-    font-weight: 500;
-    padding: 8px 16px;
-    margin-top: 20px;
-    border-radius: 6px;
-    border: 2px solid #0066b2;
-    transition: all 0.3s ease;
-}
-.skills .skills-content .left a:hover{
-    color: #0066b2;
-    background: none;
-}
-.skills .skills-content .right .bars{
-    margin-bottom: 15px;
-}
-.skills .skills-content .right .info{
-    display: flex;
-    margin-bottom: 5px;
-    align-items: center;
-    justify-content: space-between;
-}
-.skills .skills-content .right span{
-    font-weight: 500;
-    font-size: 18px;
-}
-.skills .skills-content .right .line{
-    height: 5px;
-    width: 100%;
-    background: lightgrey;
-    position: relative;
-}
-.skills .skills-content .right .line::before{
-    content: "";
-    position: absolute;
+.skills .skills-content .bar-wrapper {
+    background: white;
     height: 100%;
-    left: 0;
-    top: 0;
-    background: #0066b2;
-}
-.skills-content .right .html::before{
-    width: 90%;
-}
-.skills-content .right .css::before{
-    width: 60%;
-}
-.skills-content .right .js::before{
-    width: 80%;
-}
-.skills-content .right .java::before{
-    width: 80%;
-}
-.skills-content .right .mysql::before{
-    width: 50%;
-}
-.skills-content .right .react::before{
-    width: 50%;
+    width: 100%;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+    margin-bottom: 30px;
 }
 
-/* teams section styling */
-.teams .title::after{
-    content: "who with me";
+.progress {
+    background: #dbdddf;
+    border-radius: 20px;
+    height: 25px;
+    width: 80%;
+    color: white;
+    margin-bottom: 18px;
+    border: 1px solid white;
+    text-transform: inherit;
+    font-size: 15px;
+    font-weight: lighter;
 }
-.teams .carousel .card{
+.html5{
+    width: 90%;
+}
+.css{
+    width: 70%;
+}
+.javascript{
+    width: 70%;
+}
+.java{
+    width: 60%;
+}
+.mysql{
+    width: 50%;
+}
+.react{
+    width: 50%;
+}
+.git{
+    width: 50%;
+}
+.progress-done {
+    background: linear-gradient(to left,#53b7c9,#0066b2);
+    border-radius: 20px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* gallery section styling */
+.gallery .title::after{
+    content: "favourite";
+}
+.gallery .carousel .card{
     background: #222;
     border-radius: 6px;
     padding: 25px 35px;
@@ -397,25 +406,25 @@ section .title::after{
     overflow: hidden;
     transition: all 0.3s ease;
 }
-.teams .carousel .card:hover{
+.gallery .carousel .card:hover{
     background: #0066b2;
 }
-.teams .carousel .card .box{
+.gallery .carousel .card .box{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
 }
-.teams .carousel .card:hover .box{
+.gallery .carousel .card:hover .box{
     transform: scale(1.05);
 }
-.teams .carousel .card .text{
+.gallery .carousel .card .text{
     font-size: 25px;
     font-weight: 500;
     margin: 10px 0 7px 0;
 }
-.teams .carousel .card img{
+.gallery .carousel .card img{
     height: 150px;
     width: 150px;
     object-fit: cover;
@@ -423,7 +432,7 @@ section .title::after{
     border: 5px solid #0066b2;
     transition: all 0.3s ease;
 }
-.teams .carousel .card:hover img{
+.gallery .carousel .card:hover img{
     border-color: #fff;
 }
 .owl-dots{
@@ -455,7 +464,8 @@ section .title::after{
 .contact .contact-content .column{
     width: calc(50% - 30px);
 }
-.contact .contact-content .text{
+.contact .contact-content .text,
+.contact .contact{
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 10px;
@@ -484,64 +494,24 @@ section .title::after{
 .contact .contact-content .info .sub-title{
     color: #333;
 }
-.contact .right form .fields{
+  .row ul {
     display: flex;
+    justify-content: flex-start;
+    text-align: left;
+    align-items: flex-startr;
 }
-.contact .right form .field,
-.contact .right form .fields .field{
-    height: 45px;
-    width: 100%;
-    margin-bottom: 15px;
-}
-.contact .right form .textarea{
-    height: 80px;
+.row ul li {
+    list-style: none;
+    font-size: 40px;
     width: 100%;
 }
-.contact .right form .name{
-    margin-right: 10px;
-}
-.contact .right form .field input,
-.contact .right form .textarea textarea{
-    height: 100%;
-    width: 100%;
-    border: 1px solid lightgrey;
-    border-radius: 6px;
-    outline: none;
-    padding: 0 15px;
-    font-size: 17px;
-    font-family: 'Poppins', sans-serif;
-    transition: all 0.3s ease;
-}
-.contact .right form .field input:focus,
-.contact .right form .textarea textarea:focus{
-    border-color: #b3b3b3;
-}
-.contact .right form .textarea textarea{
-  padding-top: 10px;
-  resize: none;
-}
-.contact .right form .button-area{
-  display: flex;
-  align-items: center;
-}
-.right form .button-area button{
-  color: #fff;
-  display: block;
-  width: 160px!important;
-  height: 45px;
-  outline: none;
-  font-size: 18px;
-  font-weight: 500;
-  border-radius: 6px;
-  cursor: pointer;
-  flex-wrap: nowrap;
-  background: #0066b2;
-  border: 2px solid #0066b2;
-  transition: all 0.3s ease;
-}
-.right form .button-area button:hover{
-  color: #0066b2;
-  background: none;
+.row ul li a {
+    text-decoration: none;
+    margin: 0px;
+    padding: 5px;
+    color: #0066b2;
+    border-radius: 50%;
+    transition: 0.6s;
 }
 /* footer section styling */
 footer{
@@ -626,7 +596,7 @@ footer span a:hover{
     .about .about-content .right{
         flex: 100%;
     }
-    .services .serv-content .card{
+    .projects .serv-content .card{
         width: calc(50% - 10px);
         margin-bottom: 20px;
     }
@@ -650,7 +620,7 @@ footer span a:hover{
     .home .home-content a{
         font-size: 20px;
     }
-    .services .serv-content .card{
+    .projects .serv-content .card{
         width: 100%;
     }
 }
@@ -669,7 +639,8 @@ footer span a:hover{
     .contact .right form .fields{
         flex-direction: column;
     }
-    .contact .right form .name,
+    .contact .right form .fname,
+    .contact .right form .lname,
     .contact .right form .email{
         margin: 0;
     }
