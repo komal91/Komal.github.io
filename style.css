@@ -28,7 +28,7 @@ html{
 
 /* all similar content styling codes */
 section{
-    padding: 100px 0;
+    padding: 80px 0;
 }
 .max-width{
     max-width: 1300px;
@@ -52,7 +52,7 @@ section .title{
     text-align: center;
     font-size: 40px;
     font-weight: 500;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     padding-bottom: 20px;
     font-family: 'Ubuntu', sans-serif;
 }
@@ -349,8 +349,6 @@ section .title::after{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 70px;
-    margin-bottom: 30px;
 }
 
 .progress {
@@ -462,9 +460,14 @@ section .title::after{
     content: "get in touch";
 }
 .contact .contact-content .column{
-    width: calc(50% - 30px);
+    width: 50%!important;
+    height: 50%;
+    position: relative;
+    top: 60%;
+    left: 67%;
+    transform: translate(-52%, 0%);
 }
-.contact .contact-content .text,
+
 .contact .contact{
     font-size: 20px;
     font-weight: 600;
